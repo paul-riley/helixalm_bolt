@@ -1,9 +1,6 @@
 #
 plan helixalm_bolt::install (
   TargetSpec $targets,
-  Array[String] $required_packages,
-  Enum['apache2','www'] $webserver_type,
-  String $webserver_config_file,
 ) {
   # Require the apply_prep to use the apply block
   apply_prep($targets)
@@ -16,26 +13,26 @@ plan helixalm_bolt::install (
 
   # Puppet apply
   $apply_result = apply($ubuntu_targets){
-    package { $ubuntu_packages: 
+    package { lookup('required_packages'): 
       ensure => installed,
     }
-    package { $webserver_type:
+    package { lookup('webserver_type'):
       ensure => installed,
     }
 
     exec { 'apache_mod':
       command => ['/usr/sbin/a2enmod', 'cgi'],
-      require => [Package[$ubuntu_packages],Package[$webserver_type]],
+      require => [Package[lookup('packages')],Package[lookup('webserver_type')]],
     }
 
-    file { $webserver_config_file:
+    file { lookup('webserver_config_file'):
       ensure  => file,
-      content => file("helixalm_bolt/${webserver_type}.conf"),
+      content => file('helixalm_bolt/' + lookup('webserver_type') + '.conf'),
     }
 
-    service { $webserver_type:
+    service { lookup('webserver_type'):
       ensure    => running,
-      subscribe => Exec['apache_mod'], 
+      subscribe => Exec['apache_mod'],
     }
   }
 

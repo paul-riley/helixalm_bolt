@@ -1,5 +1,5 @@
 ---
-helixalm_bolt::install::required_packages:
+required_packages:
   - 'libharfbuzz-dev'
   - 'libxrender1'
   - 'libxcomposite-dev'

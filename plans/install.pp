@@ -27,7 +27,7 @@ plan helixalm_bolt::install (
 
     file { lookup('webserver_config_file'):
       ensure  => file,
-      content => file('helixalm_bolt/' + lookup('webserver_type') + '.conf'),
+      content => file('helixalm_bolt/cgi.conf'),
     }
 
     service { lookup('webserver_type'):

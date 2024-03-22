@@ -22,7 +22,7 @@ plan helixalm_bolt::install (
 
     exec { 'apache_mod':
       command => ['/usr/sbin/a2enmod', 'cgi'],
-      require => [Package[lookup('packages')],Package[lookup('webserver_type')]],
+      require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
     }
 
     file { lookup('webserver_config_file'):

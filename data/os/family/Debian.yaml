@@ -1,0 +1,3 @@
+---
+helixalm_bolt::install::webserver_type: apache2
+helixalm_bolt::install::webserver_config_file: '/etc/apache2/apache2.conf'

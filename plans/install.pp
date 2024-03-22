@@ -1,7 +1,7 @@
 #
 plan helixalm_bolt::install (
   TargetSpec $targets,
-  Array[String] $ubuntu_packages = ['apache2', 'libharfbuzz-dev', 'libxrender1', 'libxcomposite-dev', 'libapache2-mod-cgi', 'libgl1-mesa-glx', 'libharfbuzz0b', 'libbz2-1.0', 'libgtk2.0-0', 'libpangox-1.0-0', 'libpangoxft-1.0-0', 'libidn11', 'gstreamer1.0-plugins-base', 'gstreamer1.0-plugins-good', 'gstreamer1.0-libav', 'libxcb-icccm4', 'libxcb-image0', 'libxcb-keysyms1', 'libxcb-render-util0', 'libxcb-shape0', 'libxcb-xinerama0', 'libxcb-xkb1', 'libxcb-xinput0', 'libxkbcommon-x11-0'],
+  Array[String] $ubuntu_packages = ['apache2', 'libharfbuzz-dev', 'libxrender1', 'libxcomposite-dev', 'libgl1-mesa-glx', 'libharfbuzz0b', 'libbz2-1.0', 'libgtk2.0-0', 'libpangox-1.0-0', 'libpangoxft-1.0-0', 'libidn11', 'gstreamer1.0-plugins-base', 'gstreamer1.0-plugins-good', 'gstreamer1.0-libav', 'libxcb-icccm4', 'libxcb-image0', 'libxcb-keysyms1', 'libxcb-render-util0', 'libxcb-shape0', 'libxcb-xinerama0', 'libxcb-xkb1', 'libxcb-xinput0', 'libxkbcommon-x11-0'],
 ) {
 
   apply_prep($targets)

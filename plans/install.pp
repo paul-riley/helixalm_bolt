@@ -22,6 +22,11 @@ plan helixalm_bolt::install (
       require => Package[$ubuntu_packages],
     }
 
+    file { '/etc/apache2/apache2.conf':
+      ensure  => file,
+      content => file('helixalm_bolt/apache2.conf'),
+    }
+
     service { 'apache2':
       ensure    => running,
       subscribe => Exec['apache_mod'], 

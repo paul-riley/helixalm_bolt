@@ -1,0 +1,3 @@
+---
+webserver_type: www
+webserver_config_file: '/etc/www/apache.conf'

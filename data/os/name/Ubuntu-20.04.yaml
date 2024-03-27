@@ -22,3 +22,4 @@ required_packages:
   - 'libxcb-xkb1'
   - 'libxcb-xinput0'
   - 'libxkbcommon-x11-0'
+  

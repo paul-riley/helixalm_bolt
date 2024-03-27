@@ -20,14 +20,15 @@ plan helixalm_bolt::install (
       ensure => installed,
     }
 
-    exec { 'apache_mod':
-      command => ['/usr/sbin/a2enmod', 'cgi'],
-      require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
-    }
-
     file { lookup('webserver_config_file'):
       ensure  => file,
       content => file('helixalm_bolt/cgi.conf'),
+      notify  => Exec['apache_mod'],
+    }
+
+    exec { 'apache_mod':
+      command   => ['/usr/sbin/a2enmod', 'cgi'],
+      subscribe => Package[lookup('webserver_type')],
     }
 
     service { lookup('webserver_type'):

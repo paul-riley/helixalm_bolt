@@ -1,6 +1,3 @@
 ---
 name: helixalm
-modules:
-- puppetlabs/firewall
-- puppet/firewalld
-- puppet/selinux
+modules: []

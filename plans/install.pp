@@ -29,7 +29,7 @@ plan helixalm::install (
       }
     }
 
-    if facts['os']['name'] == 'Ubuntu' {
+    if $facts['os']['name'] == 'Ubuntu' {
       require firewall
 
       exec { 'apache_mod':

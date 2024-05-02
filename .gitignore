@@ -3,7 +3,10 @@
 .metadata
 .yardoc
 .yardwarns
-.modules
+.modules/*
+.resource_types/*
+.plan_cache.json
+.task_cache.json
 *.iml
 /.bundle/
 /.idea/

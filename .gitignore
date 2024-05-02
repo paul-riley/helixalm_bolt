@@ -3,6 +3,7 @@
 .metadata
 .yardoc
 .yardwarns
+.modules
 *.iml
 /.bundle/
 /.idea/

@@ -9,10 +9,22 @@ plan helixalm_bolt::install (
   run_plan('facts', 'targets' => $targets)
 
   $ubuntu_targets = get_targets($targets).filter |$n| { $n.facts['os']['name'] == 'Ubuntu' }
+  $el_targets = get_targets($targets).filter |$n| { $n.facts['os']['family'] == 'RedHat' }
   $failed_targets = get_targets($targets).filter |$n| { $n.facts['os']['name'] != 'Ubuntu' } # Should return this list as unsupported OS
 
+  if $ubuntu_targets and $el_targets {
+    $valid_targets = $ubuntu_targets + $el_targets
+  } elsif $el_targets {
+    $valid_targets = $el_targets
+  } elsif $ubuntu_targets {
+    $valid_targets = $ubuntu_targets
+  }
+
+  #Shortcut if nothing is there.
+  if $valid_targets.empty { return ResultSet.new([]) }
+
   # Puppet apply
-  $apply_result = apply($ubuntu_targets){
+  $apply_result = apply($valid_targets){
     package { lookup('required_packages'): 
       ensure => installed,
     }
@@ -20,19 +32,27 @@ plan helixalm_bolt::install (
       ensure => installed,
     }
 
-    exec { 'apache_mod':
-      command => ['/usr/sbin/a2enmod', 'cgi'],
-      require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
+    if $el_targets {
+      require selinux
+      require firewalld
+
+      service { lookup('webserver_type'):
+        ensure    => running,
+      }
     }
 
-    file { lookup('webserver_config_file'):
-      ensure  => file,
-      content => file('helixalm_bolt/cgi.conf'),
-    }
+    if $ubuntu_targets {
+      require firewall
 
-    service { lookup('webserver_type'):
-      ensure    => running,
-      subscribe => Exec['apache_mod'],
+      exec { 'apache_mod':
+        command => ['/usr/sbin/a2enmod', 'cgi'],
+        require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
+      }
+
+      file { lookup('webserver_config_file'):
+        ensure  => file,
+        content => file('helixalm_bolt/cgi.conf'),
+      }
     }
   }
 

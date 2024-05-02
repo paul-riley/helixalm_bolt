@@ -15,3 +15,4 @@ firewalld::ports:
 
 selinux::config:
   mode: 'permissive'
+  type: 'minimum'

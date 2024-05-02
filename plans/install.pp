@@ -46,6 +46,6 @@ plan helixalm::install (
 
   # Handle errors from the apply block
   unless $apply_result.ok {
-    out::message("The configuration applicatio failed on #{$result.error_set.targets}")
+    out::message("The configuration application failed on #{$result.error_set.targets}")
   }
 }

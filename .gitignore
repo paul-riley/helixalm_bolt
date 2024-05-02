@@ -7,7 +7,7 @@
 .resource_types/*
 .plan_cache.json
 .task_cache.json
-/bolt-debug.log
+bolt-debug.log
 *.iml
 /.bundle/
 /.idea/

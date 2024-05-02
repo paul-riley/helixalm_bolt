@@ -1,10 +1,48 @@
-2024-03-21T15:48:29.599862 INFO   [main] [Bolt::Logger] Loaded project from '/Users/paulriley/projects/helixalm_installer/helixalm_bolt'
-2024-03-21T15:48:29.643623 DEBUG  [main] [Bolt::Executor] Started with 36 max thread(s)
-2024-03-21T15:48:30.093570 DEBUG  [main] [Bolt::PAL] Loading modules from /Users/paulriley/.rvm/gems/ruby-3.0.3/gems/bolt-3.27.4/bolt-modules:/Users/paulriley/projects/helixalm_installer/helixalm_bolt/modules:/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules:/Users/paulriley/.rvm/gems/ruby-3.0.3/gems/bolt-3.27.4/modules
-2024-03-21T15:48:30.094007 DEBUG  [main] [Bolt::Inventory] Loaded inventory from /Users/paulriley/projects/helixalm_installer/helixalm_bolt/inventory.yaml
-2024-03-21T15:48:30.094847 WARN   [main] [Bolt::Logger] Bolt might be installed as a gem. To use Bolt reliably and with all of its
+2024-05-02T14:20:23.747249 INFO   [main] [Bolt::Logger] Loaded project from '/Users/paulriley/projects/helixalm_installer/helixalm_bolt'
+2024-05-02T14:20:23.747385 WARN   [main] [Bolt::Logger] No project name is specified in bolt-project.yaml. Project-level content will not be available. [ID: missing_project_name]
+2024-05-02T14:20:23.831552 DEBUG  [main] [Bolt::Executor] Started with 100 max thread(s)
+2024-05-02T14:20:24.320946 DEBUG  [main] [Bolt::PAL] Loading modules from /Users/paulriley/.rvm/gems/ruby-3.0.3/gems/bolt-3.23.1/bolt-modules:/Users/paulriley/projects/helixalm_installer/helixalm_bolt/modules:/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules:/Users/paulriley/.rvm/gems/ruby-3.0.3/gems/bolt-3.23.1/modules
+2024-05-02T14:20:24.321508 DEBUG  [main] [Bolt::Inventory] Tried to load inventory from /Users/paulriley/projects/helixalm_installer/helixalm_bolt/inventory.yaml, but the file does not exist
+2024-05-02T14:20:24.322235 WARN   [main] [Bolt::Logger] Bolt might be installed as a gem. To use Bolt reliably and with all of its
 dependencies, uninstall the 'bolt' gem and install Bolt as a package:
 https://puppet.com/docs/bolt/latest/bolt_installing.html
 
 If you meant to install Bolt as a gem and want to disable this warning,
 set the BOLT_GEM environment variable. [ID: gem_install]
+2024-05-02T14:20:27.802658 INFO   [main] [Bolt::R10KLogProxy] Using Puppetfile '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/Puppetfile'
+2024-05-02T14:20:27.802746 DEBUG  [main] [Bolt::R10KLogProxy] Using moduledir '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules'
+2024-05-02T14:20:27.805100 DEBUG  [main] [Bolt::R10KLogProxy] Updating modules with 4 threads
+2024-05-02T14:20:27.806649 INFO   [] [Bolt::R10KLogProxy] Deploying module to /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules/firewall
+2024-05-02T14:20:27.819964 INFO   [] [Bolt::R10KLogProxy] Deploying module to /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules/selinux
+2024-05-02T14:20:27.820183 INFO   [] [Bolt::R10KLogProxy] Deploying module to /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules/stdlib
+2024-05-02T14:20:27.820317 INFO   [] [Bolt::R10KLogProxy] Deploying module to /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules/firewalld
+2024-05-02T14:20:27.821340 DEBUG  [] [Bolt::R10KLogProxy] Module thread 10800 exiting: queue empty
+2024-05-02T14:20:27.821628 DEBUG  [] [Bolt::R10KLogProxy] Module thread 10820 exiting: queue empty
+2024-05-02T14:20:27.821937 DEBUG  [] [Bolt::R10KLogProxy] Module thread 10840 exiting: queue empty
+2024-05-02T14:20:27.988447 DEBUG  [] [Bolt::R10KLogProxy] Downloading puppetlabs-firewall-8.0.1 from https://forgeapi.puppet.com/ to /var/folders/n9/9plkflyd6zqclftb_w45h6yw0000gp/T/d20240502-62744-990y61/puppetlabs-firewall-8.0.1.tar.gz
+2024-05-02T14:20:28.264677 DEBUG  [] [Bolt::R10KLogProxy] Verifying that /Users/paulriley/.r10k/cache/puppetlabs-firewall-8.0.1/tarball/puppetlabs-firewall-8.0.1.tar.gz matches checksum
+2024-05-02T14:20:28.267653 DEBUG  [] [Bolt::R10KLogProxy] Unpacking /Users/paulriley/.r10k/cache/puppetlabs-firewall-8.0.1/tarball/puppetlabs-firewall-8.0.1.tar.gz to /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules/firewall (with tmpdir /var/folders/n9/9plkflyd6zqclftb_w45h6yw0000gp/T/d20240502-62744-5q35hp/puppetlabs-firewall-8.0.1)
+2024-05-02T14:20:28.308768 DEBUG  [] [Bolt::R10KLogProxy] Valid files unpacked: ["puppetlabs-firewall-8.0.1", "puppetlabs-firewall-8.0.1/.gitpod.Dockerfile", "puppetlabs-firewall-8.0.1/.gitpod.yml", "puppetlabs-firewall-8.0.1/.nodeset.yml", "puppetlabs-firewall-8.0.1/.rubocop.yml", "puppetlabs-firewall-8.0.1/.rubocop_todo.yml", "puppetlabs-firewall-8.0.1/CHANGELOG.md", "puppetlabs-firewall-8.0.1/CODEOWNERS", "puppetlabs-firewall-8.0.1/CONTRIBUTING.md", "puppetlabs-firewall-8.0.1/HISTORY.md", "puppetlabs-firewall-8.0.1/LICENSE", "puppetlabs-firewall-8.0.1/NOTICE", "puppetlabs-firewall-8.0.1/README.md", "puppetlabs-firewall-8.0.1/REFERENCE.md", "puppetlabs-firewall-8.0.1/data", "puppetlabs-firewall-8.0.1/data/common.yaml", "puppetlabs-firewall-8.0.1/hiera.yaml", "puppetlabs-firewall-8.0.1/lib", "puppetlabs-firewall-8.0.1/lib/facter", "puppetlabs-firewall-8.0.1/lib/facter/ip6tables_version.rb", "puppetlabs-firewall-8.0.1/lib/facter/iptables_persistent_version.rb", "puppetlabs-firewall-8.0.1/lib/facter/iptables_version.rb", "puppetlabs-firewall-8.0.1/lib/puppet", "puppetlabs-firewall-8.0.1/lib/puppet/provider", "puppetlabs-firewall-8.0.1/lib/puppet/provider/firewall", "puppetlabs-firewall-8.0.1/lib/puppet/provider/firewall/firewall.rb", "puppetlabs-firewall-8.0.1/lib/puppet/provider/firewallchain", "puppetlabs-firewall-8.0.1/lib/puppet/provider/firewallchain/firewallchain.rb", "puppetlabs-firewall-8.0.1/lib/puppet/type", "puppetlabs-firewall-8.0.1/lib/puppet/type/firewall.rb", "puppetlabs-firewall-8.0.1/lib/puppet/type/firewallchain.rb", "puppetlabs-firewall-8.0.1/lib/puppet_x", "puppetlabs-firewall-8.0.1/lib/puppet_x/puppetlabs", "puppetlabs-firewall-8.0.1/lib/puppet_x/puppetlabs/firewall", "puppetlabs-firewall-8.0.1/lib/puppet_x/puppetlabs/firewall/ipcidr.rb", "puppetlabs-firewall-8.0.1/lib/puppet_x/puppetlabs/firewall/utility.rb", "puppetlabs-firewall-8.0.1/manifests", "puppetlabs-firewall-8.0.1/manifests/init.pp", "puppetlabs-firewall-8.0.1/manifests/linux", "puppetlabs-firewall-8.0.1/manifests/linux/archlinux.pp", "puppetlabs-firewall-8.0.1/manifests/linux/debian.pp", "puppetlabs-firewall-8.0.1/manifests/linux/gentoo.pp", "puppetlabs-firewall-8.0.1/manifests/linux/redhat.pp", "puppetlabs-firewall-8.0.1/manifests/linux.pp", "puppetlabs-firewall-8.0.1/manifests/params.pp", "puppetlabs-firewall-8.0.1/metadata.json", "puppetlabs-firewall-8.0.1/pdk.yaml", "puppetlabs-firewall-8.0.1/provision.yaml"]
+2024-05-02T14:20:28.309262 DEBUG  [] [Bolt::R10KLogProxy] Module thread 10860 exiting: queue empty
+2024-05-02T14:20:28.311337 DEBUG  [main] [Bolt::R10KLogProxy] No unmanaged contents in /Users/paulriley/projects/helixalm_installer/helixalm_bolt/.modules, nothing to purge
+2024-05-02T14:20:28.649342 INFO   [main] [Puppet] Generating Puppet resource types.
+2024-05-02T14:20:28.831154 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewall.pp' using 'pcore' format.
+2024-05-02T14:20:28.854612 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewallchain.pp' using 'pcore' format.
+2024-05-02T14:20:28.879572 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_custom_service.pp' using 'pcore' format.
+2024-05-02T14:20:28.901038 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_direct_chain.pp' using 'pcore' format.
+2024-05-02T14:20:28.921699 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_direct_passthrough.pp' using 'pcore' format.
+2024-05-02T14:20:28.963595 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_direct_purge.pp' using 'pcore' format.
+2024-05-02T14:20:28.969165 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_direct_rule.pp' using 'pcore' format.
+2024-05-02T14:20:28.995987 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_ipset.pp' using 'pcore' format.
+2024-05-02T14:20:29.080315 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_policy.pp' using 'pcore' format.
+2024-05-02T14:20:29.085313 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_port.pp' using 'pcore' format.
+2024-05-02T14:20:29.094459 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_rich_rule.pp' using 'pcore' format.
+2024-05-02T14:20:29.098791 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_service.pp' using 'pcore' format.
+2024-05-02T14:20:29.125743 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/firewalld_zone.pp' using 'pcore' format.
+2024-05-02T14:20:29.154517 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/selinux_fcontext.pp' using 'pcore' format.
+2024-05-02T14:20:29.179587 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/selinux_fcontext_equivalence.pp' using 'pcore' format.
+2024-05-02T14:20:29.323617 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/selinux_login.pp' using 'pcore' format.
+2024-05-02T14:20:29.349575 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/selinux_permissive.pp' using 'pcore' format.
+2024-05-02T14:20:29.497228 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/selinux_port.pp' using 'pcore' format.
+2024-05-02T14:20:29.509280 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/anchor.pp' using 'pcore' format.
+2024-05-02T14:20:29.538983 INFO   [main] [Puppet] Generating '/Users/paulriley/projects/helixalm_installer/helixalm_bolt/.resource_types/file_line.pp' using 'pcore' format.

@@ -4,9 +4,7 @@ required_packages:
   - 'libxcb'
   - 'wget'
   - 'perl'
-  - 'httpd'
   - 'libnsl'
   - 'net-tools'
   - 'freetype-devel'
   - 'mod_fcgid'
-  

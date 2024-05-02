@@ -8,20 +8,8 @@ plan helixalm::install (
   # This collects facts on targets and updates the inventory
   run_plan('facts', 'targets' => $targets)
 
-  $ubuntu_targets = get_targets($targets).filter |$n| { $n.facts['os']['name'] == 'Ubuntu' }
-  $el_targets = get_targets($targets).filter |$n| { $n.facts['os']['family'] == 'RedHat' }
-  $failed_targets = get_targets($targets).filter |$n| { $n.facts['os']['name'] != 'Ubuntu' } # Should return this list as unsupported OS
-
-  if $ubuntu_targets and $el_targets {
-    $valid_targets = $ubuntu_targets + $el_targets
-  } elsif $el_targets {
-    $valid_targets = $el_targets
-  } elsif $ubuntu_targets {
-    $valid_targets = $ubuntu_targets
-  }
-
   #Shortcut if nothing is there.
-  if $valid_targets.empty { return ResultSet.new([]) }
+  if targets.empty { return ResultSet.new([]) }
 
   # Puppet apply
   $apply_result = apply($valid_targets){
@@ -32,7 +20,7 @@ plan helixalm::install (
       ensure => installed,
     }
 
-    if $el_targets {
+    if $facts['os']['family'] == 'RedHat' {
       require selinux
       require firewalld
 
@@ -41,7 +29,7 @@ plan helixalm::install (
       }
     }
 
-    if $ubuntu_targets {
+    if facts['os']['name'] == 'Ubuntu' {
       require firewall
 
       exec { 'apache_mod':

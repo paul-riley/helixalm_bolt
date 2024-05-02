@@ -1,0 +1,12 @@
+---
+required_packages:
+  - 'gtk2'
+  - 'libxcb'
+  - 'wget'
+  - 'perl'
+  - 'httpd'
+  - 'libnsl'
+  - 'net-tools'
+  - 'freetype-devel'
+  - 'mod_fcgid'
+  

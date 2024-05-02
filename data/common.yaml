@@ -1,11 +1,4 @@
 ---
-firewalld::ports:
-  'Alow port 80 tcp in the public zone':
-    ensure: present
-    zone: public
-    port: 80
-    protocol: 'tcp'
-
 firewall:
   '100 allow port 80 tcp access':
     dport: 80
@@ -13,5 +6,13 @@ firewall:
     jump: 'accept'
     ensure: present
 
+firewalld::ports:
+  'Alow port 80 tcp in the public zone':
+    ensure: present
+    zone: public
+    port: 80
+    protocol: 'tcp'
+
 selinux:
-  mode: 'permissive'
+  'Disable SE Linux':
+    mode: 'permissive'

@@ -1,5 +1,5 @@
 #
-plan helixalm_bolt::install (
+plan helixalm::install (
   TargetSpec $targets,
 ) {
   # Require the apply_prep to use the apply block
@@ -51,7 +51,7 @@ plan helixalm_bolt::install (
 
       file { lookup('webserver_config_file'):
         ensure  => file,
-        content => file('helixalm_bolt/cgi.conf'),
+        content => file('helixalm/cgi.conf'),
       }
     }
   }

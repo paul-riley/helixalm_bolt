@@ -1,5 +1,4 @@
 ---
-modules:
-- puppet/selinux
-- puppet/firewalld
-- puppetlabs/firewall
+name: helixalm
+plans:
+- helixalm::install

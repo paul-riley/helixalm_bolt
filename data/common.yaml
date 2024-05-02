@@ -1,10 +1,18 @@
 ---
 firewall:
-  '100 allow port 80 tcp access':
-    dport: 80
-    proto: 'tcp'
-    jump: 'accept'
-    ensure: present
+  iptables_name: '100 allow port 80 tcp access'
+  firewalld_name: 'Allow port 80 tcp in the public zone'
+  ensure: 'present'
+  port: 80
+  protocol: 'tcp'
+  zone: public
+  jump: 'accept'
+    
+selinux:
+  mode: 'enforcing'
+  boolean_title: 'disable_httpd_se_linux'
+  boolean_value: 'off'
+ 
 
 firewalld::ports:
   'Alow port 80 tcp in the public zone':
@@ -12,7 +20,3 @@ firewalld::ports:
     zone: public
     port: 80
     protocol: 'tcp'
-
-selinux::config:
-  mode: 'permissive'
-  type: 'minimum'

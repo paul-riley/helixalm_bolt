@@ -21,8 +21,20 @@ plan helixalm::install (
     }
 
     if $facts['os']['family'] == 'RedHat' {
-      require selinux
       require firewalld
+      firwalld::ports { lookup('firewall::firewalld_name'):
+        ensure   => lookup('firewall::ensure'),
+        zone     => lookup('firewall::zone'),
+        port     => lookup('firewall::port'),
+        protocol => lookup('firewall::protocol'),
+      }
+
+      class { 'selinux':
+        mode => lookup('selinux::mode')
+      }
+      selinux::boolean { lookup('selinux::boolean_title'):
+        boolean => lookup('selinux::boolean_value'),
+      }
 
       service { lookup('webserver_type'):
         ensure    => running,
@@ -31,6 +43,11 @@ plan helixalm::install (
 
     if $facts['os']['name'] == 'Ubuntu' {
       require firewall
+      firewall { lookup('firewall::iptables_name'):
+        proto => lookup('firewall::protocol'),
+        dport => lookup('firewall::port'),
+        jump  => lookup('firewall::jump'),
+      }
 
       exec { 'apache_mod':
         command => ['/usr/sbin/a2enmod', 'cgi'],

@@ -33,7 +33,7 @@ plan helixalm::install (
         mode => lookup('selinux.mode'),
       }
       selinux::boolean { lookup('selinux.boolean_title'):
-        boolean => lookup('selinux.boolean_value'),
+        ensure => lookup('selinux.boolean_value'),
       }
 
       service { lookup('webserver_type'):

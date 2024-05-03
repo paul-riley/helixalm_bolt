@@ -11,7 +11,5 @@ firewall:
 selinux:
   mode: 'enforcing'
   boolean_hash: 
-    'httpd_builtin_scripting':
-      boolean_value: 'off'
-    'httpd_enable_cgi':
-      boolean_value: 'off'
+    'httpd_builtin_scripting': 'off'
+    'httpd_enable_cgi': 'off'

@@ -34,9 +34,9 @@ plan helixalm::install (
       }
       $sebools = lookup('selinux.boolean_hash')
 
-      $sebools.each |$sebool, Hash $sebool_attr| {
-        selinux::boolean { $sebool:
-          ensure => $sebool_attr[boolean_value],
+      $sebools.each |$sebool_title, $sebool_value| {
+        selinux::boolean { $sebool_title:
+          ensure => $sebool_value,
         }
       }
 

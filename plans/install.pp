@@ -32,7 +32,7 @@ plan helixalm::install (
       class { 'selinux':
         mode => lookup('selinux.mode'),
       }
-      $sebools = lookup('selinux.boolean_title')
+      $sebools = lookup('selinux.boolean_hash')
 
       $sebools.each |$sebool| {
         selinux::boolean { $sebool:

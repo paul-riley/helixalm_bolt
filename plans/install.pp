@@ -22,7 +22,7 @@ plan helixalm::install (
 
     if $facts['os']['family'] == 'RedHat' {
       require firewalld
-      firwalld::ports { lookup('firewall.firewalld_name'):
+      firewalld::ports { lookup('firewall.firewalld_name'):
         ensure   => lookup('firewall.ensure'),
         zone     => lookup('firewall.zone'),
         port     => lookup('firewall.port'),

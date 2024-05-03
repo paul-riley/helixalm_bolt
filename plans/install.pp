@@ -32,8 +32,12 @@ plan helixalm::install (
       class { 'selinux':
         mode => lookup('selinux.mode'),
       }
-      selinux::boolean { lookup('selinux.boolean_title'):
-        ensure => lookup('selinux.boolean_value'),
+      $sebools = lookup('selinux.boolean_title')
+
+      $sebools.each |$sebool| {
+        selinux::boolean { $sebool:
+          ensure => $sebool[boolean_value],
+        }
       }
 
       service { lookup('webserver_type'):

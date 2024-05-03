@@ -13,7 +13,7 @@ plan helixalm::install (
 
   # Puppet apply
   $apply_result = apply($targets){
-    package { lookup('required_packages'): 
+    package { lookup('required_packages'):
       ensure => installed,
     }
     package { lookup('webserver_type'):
@@ -67,6 +67,6 @@ plan helixalm::install (
 
   # Handle errors from the apply block
   unless $apply_result.ok {
-    out::message("The configuration application failed on #{$result.error_set.targets}")
+    out::message("The configuration application failed on #{${result.error_set.targets}")
   }
 }

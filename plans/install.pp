@@ -30,7 +30,7 @@ plan helixalm::install (
       }
 
       class { 'selinux':
-        mode => lookup('selinux::mode'),
+        mode => lookup('selinux.mode'),
       }
       selinux::boolean { lookup('selinux.boolean_title'):
         boolean => lookup('selinux.boolean_value'),

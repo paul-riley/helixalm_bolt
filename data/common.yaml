@@ -12,11 +12,3 @@ selinux:
   mode: 'enforcing'
   boolean_title: 'disable_httpd_se_linux'
   boolean_value: 'off'
- 
-
-firewalld::ports:
-  'Alow port 80 tcp in the public zone':
-    ensure: present
-    zone: public
-    port: 80
-    protocol: 'tcp'

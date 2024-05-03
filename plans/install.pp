@@ -22,7 +22,7 @@ plan helixalm::install (
 
     if $facts['os']['family'] == 'RedHat' {
       require firewalld
-      firewalld::ports { lookup('firewall.firewalld_name'):
+      firewalld_port { lookup('firewall.firewalld_name'):
         ensure   => lookup('firewall.ensure'),
         zone     => lookup('firewall.zone'),
         port     => lookup('firewall.port'),
@@ -30,7 +30,7 @@ plan helixalm::install (
       }
 
       class { 'selinux':
-        mode => lookup('selinux::mode')
+        mode => lookup('selinux::mode'),
       }
       selinux::boolean { lookup('selinux.boolean_title'):
         boolean => lookup('selinux.boolean_value'),

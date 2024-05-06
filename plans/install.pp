@@ -12,7 +12,7 @@ plan helixalm::install (
   if targets.empty { return ResultSet.new([]) }
 
   # Puppet apply
-  $apply_result = apply($targets){
+  $apply_result = apply($targets) {
     package { lookup('required_packages'):
       ensure => installed,
     }

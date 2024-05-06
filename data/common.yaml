@@ -9,7 +9,7 @@ firewall:
   jump: 'accept'
     
 selinux:
-  mode: 'enforcing'
+  mode: 'permissive'
   boolean_hash: 
     'httpd_builtin_scripting': 'off'
     'httpd_enable_cgi': 'off'

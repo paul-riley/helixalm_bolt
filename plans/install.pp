@@ -11,7 +11,7 @@ plan helixalm::install (
   #Shortcut if nothing is there.
   if targets.empty { return ResultSet.new([]) }
 
-  # Puppet apply
+  #Puppet apply for targets. Sets up requirements, configures firewall and starts web server.
   $apply_result = apply($targets) {
     package { lookup('required_packages'):
       ensure => installed,

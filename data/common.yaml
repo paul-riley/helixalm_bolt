@@ -10,6 +10,3 @@ firewall:
     
 selinux:
   mode: 'permissive'
-  boolean_hash: 
-    'httpd_builtin_scripting': 'off'
-    'httpd_enable_cgi': 'off'

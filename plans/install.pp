@@ -30,18 +30,9 @@ plan helixalm::install (
       }
 
       class { 'selinux':
-        mode => lookup('selinux.mode'),
-      }
-      $sebools = lookup('selinux.boolean_hash')
-
-      $sebools.each |$sebool_title, $sebool_value| {
-        selinux::boolean { $sebool_title:
-          ensure => $sebool_value,
-        }
-      }
-
-      service { lookup('webserver_type'):
-        ensure    => running,
+        mode    => lookup('selinux.mode'),
+        require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
+        notify  => Service[lookup('webserver_type')],
       }
     }
 
@@ -61,7 +52,12 @@ plan helixalm::install (
       file { lookup('webserver_config_file'):
         ensure  => file,
         content => file('helixalm/cgi.conf'),
+        notify  => Service[lookup('webserver_type')],
       }
+    }
+    service { lookup('webserver_type'):
+      ensure  => running,
+      require => [Package[lookup('required_packages')],Package[lookup('webserver_type')]],
     }
   }
 

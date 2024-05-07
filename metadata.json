@@ -1,10 +1,10 @@
 {
-  "name": "helixalm",
-  "version": "1.0.1",
+  "name": "priley-helixalm",
+  "version": "1.0.2",
   "author": "priley",
-  "summary": "",
+  "summary": "Configures a Helix ALM node to manually run the installer",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/paul-riley/helixalm_bolt",
   "dependencies": [
 
   ],

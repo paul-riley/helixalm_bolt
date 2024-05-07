@@ -31,19 +31,22 @@ A [completed Bolt installation](https://www.puppet.com/docs/bolt/latest/bolt_ins
 
 ### Beginning with Helix ALM
 
-`bolt plan run helixalm:install`
+Install the module. It currently has a single plan:
+
+`bolt plan run helixalm::install`
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your
-users how to use your module to solve problems, and be sure to include code
-examples. Include three to five examples of the most important or common tasks a
-user can accomplish with your module. Show users how to accomplish more complex
-tasks that involve different types, classes, and functions working in tandem.
+1. Install the module.
+1. Run: `bolt plan run helixalm::install`.
+1. Unzip the correct HelixALM tar ball.
+1. Run the HelixALM installer.
+1. Start the license server: `/usr/bin/spls start`
+1. Start HelixALM: `/usr/bin/ttstudio` start
 
 ## Limitations
 
-This module has been tested with Ubuntu 20.04, Ubuntu 22.04, AlmaLinux 9, Red Hat Enterprise Linux 9, and Rocky Linux 9.
+This module has been tested with Ubuntu 20.04, Ubuntu 22.04, AlmaLinux 9, Red Hat Enterprise Linux 9, and Rocky Linux 9. It is not supported for deviations or alternative operating systems.
 
 ## Development
 

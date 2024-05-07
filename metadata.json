@@ -1,7 +1,7 @@
 {
-  "name": "16c7x-helixalm_bolt",
+  "name": "helixalm",
   "version": "0.1.0",
-  "author": "andrewjones",
+  "author": "Paul Riley",
   "summary": "",
   "license": "Apache-2.0",
   "source": "",
@@ -10,46 +10,34 @@
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem": "CentOS",
+      "operatingsystem": "AlmaLinux",
       "operatingsystemrelease": [
-        "7"
+        "9"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
-        "7"
+        "9"
       ]
     },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "8"
+        "9"
       ]
     },
     {
-      "operatingsystem": "Scientific",
+      "operatingsystem": "Rocky",
       "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "10"
+        "9"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "18.04"
-      ]
-    },
-    {
-      "operatingsystem": "windows",
-      "operatingsystemrelease": [
-        "2019",
-        "10"
+        "22.04",
+        "24.04"
       ]
     }
   ],
@@ -59,7 +47,7 @@
       "version_requirement": ">= 7.24 < 9.0.0"
     }
   ],
-  "pdk-version": "3.0.0",
-  "template-url": "pdk-default#3.0.0",
-  "template-ref": "tags/3.0.0-0-g056e50d"
+  "pdk-version": "3.0.1",
+  "template-url": "pdk-default#3.0.1",
+  "template-ref": "tags/3.0.1-0-gd13288a"
 }

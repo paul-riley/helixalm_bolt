@@ -1,8 +1,8 @@
-# The summary sets the description of the plan that will appear
-# in 'bolt plan show' output. Bolt uses puppet-strings to parse the
-# summary and parameters from the plan.
-# @summary Install the prerequisites for HelixALM
-# @param targets The targets to run on.# 
+# @summary Installs the prerequisites for HelixALM
+#
+# @param targets The targets to install HelixALM.# 
+# @example Using Plan
+#   priley::install($targets)
 plan helixalm::install (
   TargetSpec $targets,
 ) {

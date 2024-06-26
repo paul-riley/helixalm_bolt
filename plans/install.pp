@@ -1,16 +1,13 @@
-# @summary Installs the prerequisites for HelixALM
+# @summary Installs the prerequisites for HelixALM.
 #
-# @param targets The targets to install HelixALM.# 
+# @param targets The targets to install HelixALM. 
 # @example Using Plan
-#   priley::install($targets)
+#   helixalm::install($targets)
 plan helixalm::install (
   TargetSpec $targets,
 ) {
   # Require the apply_prep to use the apply block
   apply_prep($targets)
-
-  # This collects facts on targets and updates the inventory
-  run_plan('facts', 'targets' => $targets)
 
   #Shortcut if nothing is there.
   if targets.empty { return ResultSet.new([]) }

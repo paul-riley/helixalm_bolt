@@ -3,11 +3,6 @@
 .metadata
 .yardoc
 .yardwarns
-.modules/*
-.resource_types/*
-.plan_cache.json
-.task_cache.json
-bolt-debug.log
 *.iml
 /.bundle/
 /.idea/
@@ -31,3 +26,7 @@ bolt-debug.log
 .envrc
 /inventory.yaml
 /spec/fixtures/litmus_inventory.yaml
+.plan_cache.json
+.task_cache.json
+.modules/
+.resource_types/

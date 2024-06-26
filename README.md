@@ -37,8 +37,9 @@ Install the module. It currently has a single plan:
 
 ## Usage
 
-1. Install the module.
-1. Run: `bolt plan run helixalm::install`.
+1. Create a new Bolt project: `mkdir helixalminstall && cd helixalminstall && bolt project init`
+1. Install the module: `bolt module add priley-helixalm`
+1. Run the plan: `bolt plan run helixalm::install`.
 1. Unzip the correct HelixALM tar ball.
 1. Run the HelixALM installer.
 1. Start the license server: `/usr/bin/spls start`

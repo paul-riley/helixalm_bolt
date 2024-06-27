@@ -1,5 +1,5 @@
 ---
-firewall:
+firewall_config:
   iptables_name: '100 allow port 80 tcp access'
   firewalld_name: 'Allow port 80 tcp in the public zone'
   ensure: 'present'
@@ -8,5 +8,5 @@ firewall:
   zone: public
   jump: 'accept'
     
-selinux:
+selinux_config:
   mode: 'permissive'
